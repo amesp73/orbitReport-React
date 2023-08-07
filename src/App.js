@@ -12,22 +12,25 @@ function App() {
   // Set method prevents duplicates
   // if we only use map we would have 10 buttons many being duplicates
   const [sat, setSat] = useState(satData);
-  const displaySats = [...new Set(satData.map((data) =>
+  let displaySats = [...new Set(satData.map((data) =>
 data.orbitType))];
   const filterByType = (currentType) => {
-      const displaySats = satData.filter((newSatDisplay) => {
+      displaySats = satData.filter((newSatDisplay) => {
         return newSatDisplay.orbitType === currentType;
       });
       setSat(displaySats);
   }
   return (
     <div>
-      <Banner />
-      <Buttons />
-        filterByType = {filterByType}
-        setSat = {setSat}
-        displaySats = {displaySats}
-      <Table sat = {sat}/>
+      <>
+        <Banner />
+        <Buttons
+          filterByType={filterByType}
+          setSat={setSat}
+          displaySats={displaySats}
+        />
+        <Table sat={sat} />
+      </>
     </div>
   );
 }
