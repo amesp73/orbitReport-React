@@ -1,4 +1,4 @@
-
+import styling from './styling.css';
 
 export default function Banner() {
     return (
