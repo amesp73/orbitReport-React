@@ -15,5 +15,6 @@ const Buttons = ({filterByType, setSat, displaySats}) => {
   );
 };
   
+//sat and id are callbacks for map function
 
 export default Buttons;
